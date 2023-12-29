@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const app = express();
 app.use(cors({
-    origin: "https://curious-platypus-651cab.netlify.app",
+    origin: ["https://curious-platypus-651cab.netlify.app"],
 }));
 app.use(cookieParser());
 app.use(express.json());
@@ -24,6 +24,6 @@ mongoose.connect("mongodb+srv://user:user@cluster0.jmjfvve.mongodb.net/?retryWri
 const routes = require("./Routes/routes")
 app.use("/api/v1", routes)
 
-app.listen(8081, () => {
+app.listen(process.env.PORT || 8081, () => {
     console.log("Running");
 });
