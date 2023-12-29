@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const app = express();
 app.use(cors({
-    origin: "*",
+    origin: "https://curious-platypus-651cab.netlify.app",
 }));
 app.use(cookieParser());
 app.use(express.json());
